@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "lib",
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "esnext"
+    ],
+    "sourceMap": true,
+    "rootDir": "src",
+    "declaration": true,
+    "declarationDir": "lib/@types",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "paths": {
+      "@source/*": ["./src/*"],
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ]
+  },
+  "exclude": [
+    "lib",
+    "node_module",
+    "config",
+  ]
+}

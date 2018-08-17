@@ -1,0 +1,12 @@
+# Ignore all private code like TS and configs
+src
+.babelrc
+tsconfig*
+tslint.json
+.editorconfig
+
+# Ignore tests
+tests
+
+# Ignore scripts
+scripts
