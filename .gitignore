@@ -6,4 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Ignore build
-/lib
+# /lib
+
+# Build must be included, because we use this package in other projects
+# installed directly from repo and this is possible only if repo itself
+# contains build
