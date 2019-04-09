@@ -14,6 +14,7 @@ interface ICommitPayload {
   id?: string; // If it's necessary to specify which element
   type?: string; // Element type. If creating, than it's necessary to specify if component/container
   data: ILooseObject; // Data object specific for given operation and element in content
+  templateId?: string; // ID of used template of data for component. If not defined, no template is used
 }
 
 interface ICommit {

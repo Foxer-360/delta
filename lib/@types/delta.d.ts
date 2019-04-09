@@ -10,6 +10,7 @@ interface ICommitPayload {
     id?: string;
     type?: string;
     data: ILooseObject;
+    templateId?: string;
 }
 interface ICommit {
     commit: string;
