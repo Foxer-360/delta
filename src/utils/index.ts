@@ -147,8 +147,15 @@ export const moveObjectInArray = (arr: IPosLooseObject[], current: number, next:
   // Map new positions
   const mapFce = (o: IPosLooseObject, i: number) => {
     // Moving component
-    if (i === current) {
+    if (o.position === current) {
       // o.position = next;
+      if (next > current) {
+        return {
+          ...o,
+          position: next - 1,
+        };
+      }
+
       return {
         ...o,
         position: next,
@@ -156,7 +163,7 @@ export const moveObjectInArray = (arr: IPosLooseObject[], current: number, next:
     }
 
     let pos = o.position;
-    if (current < o.position && o.position <= next) {
+    if (current < o.position && o.position < next) {
       pos--;
     }
     if (next <= o.position && o.position < current) {
