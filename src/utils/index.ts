@@ -133,15 +133,22 @@ const sortPosLooseObjects = (a: IPosLooseObject, b: IPosLooseObject): number => 
  * @return {IPosLooseObject[]}
  */
 export const moveObjectInArray = (arr: IPosLooseObject[], current: number, next: number): IPosLooseObject[] => {
+  const mapPositionFix = (item: IPosLooseObject, index: number): IPosLooseObject => {
+    return {
+      ...item,
+      position: index,
+    };
+  };
+
   // Check arguments validity
   if (current === next) {
-    return arr;
+    return arr.map(mapPositionFix);
   }
   if (current > arr.length || current < 0) {
-    return arr;
+    return arr.map(mapPositionFix);
   }
   if (next > arr.length || next < 0) {
-    return arr;
+    return arr.map(mapPositionFix);
   }
 
   // Map new positions
@@ -177,7 +184,7 @@ export const moveObjectInArray = (arr: IPosLooseObject[], current: number, next:
     };
   };
 
-  const res = arr.map(mapFce).sort(sortPosLooseObjects);
+  const res = arr.map(mapFce).sort(sortPosLooseObjects).map(mapPositionFix);
   return res;
 }
 
