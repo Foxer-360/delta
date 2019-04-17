@@ -184,7 +184,11 @@ export const moveObjectInArray = (arr: IPosLooseObject[], current: number, next:
     };
   };
 
+  // tslint:disable-next-line:no-console
+  console.log('%c[Delta]%c Before final sort', 'font-weight: bold, color: SaddleBrown', 'color: SaddleBrown', [ ...arr ]);
   const res = arr.map(mapFce).sort(sortPosLooseObjects).map(mapPositionFix);
+  // tslint:disable-next-line:no-console
+  console.log('%c[Delta]%c After final sort', 'font-weight: bold, color: SaddleBrown', 'color: SaddleBrown', [ ...res ]);
   return res;
 }
 
